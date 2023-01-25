@@ -10,11 +10,14 @@ class Scenes:
     scenes = {}
     # Current scene
     current_scene = None
-    # Default scene
+
+    should_quit = False
 
     @staticmethod
     def add_scene(scene):
         Scenes.scenes[scene.name] = scene
+        scene.start()
+        scene.awake()
 
     @staticmethod
     def set_scene(name):

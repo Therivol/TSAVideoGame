@@ -1,12 +1,12 @@
 {
     "TITLE": "TSA Video Game",
     "RESOLUTION": [
-        960,
-        540
+        959,
+        544
     ],
     "WINDOW SIZE": [
         960,
-        540
+        544
     ],
-    "ASPECT RATIO": 1.777777777777778
+    "ASPECT RATIO": 1.764705882
 }

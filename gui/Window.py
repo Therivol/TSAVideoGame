@@ -5,8 +5,11 @@ from util.Time import Time
 from util.Input import Input
 from util.Settings import Settings
 from util.Scenes import Scenes
+from util.Assets import Assets
 
 from game.scene.MainMenu import MainMenu
+from game.scene.LevelSelect import LevelSelect
+from game.scene.Level1 import Level1
 
 
 class Window:
@@ -22,17 +25,21 @@ class Window:
     def awake(self):
         self.display = p.display.set_mode(Settings.get("RESOLUTION"))
         p.display.set_caption(Settings.get("TITLE"))
+        p.display.set_icon(Assets.get_image("assets/tiles/1.png"))
         self.resize(Settings.get("WINDOW SIZE"))
 
-    def start(self):
         Scenes.add_scene(MainMenu())
+        Scenes.add_scene(LevelSelect())
+        Scenes.add_scene(Level1())
+
+    def start(self):
         Scenes.set_scene("MAIN MENU")
 
     def poll_events(self):
         Input.update()
 
         for ev in p.event.get():
-            if ev.type == p.QUIT:
+            if ev.type == p.QUIT or Scenes.should_quit:
                 self.quit()
 
             if ev.type == p.VIDEORESIZE:

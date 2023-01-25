@@ -98,3 +98,7 @@ class Input:
         elif not mouse_buttons[button]:
             Input.mouse_down[button] = False
         return False
+
+    @staticmethod
+    def get_mouse_pos():
+        return p.mouse.get_pos()
