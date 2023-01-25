@@ -1,21 +1,15 @@
-from util.Window import Window
-import pygame as p
-from util.Time import Time
-from util.Settings import Settings
+from game.Game import Game
 
 
 if __name__ == "__main__":
-    Time.awake()
-    Settings.load()
 
-    window = Window()
-    window.awake()
-    window.start()
+    game = Game()
+    game.start()
 
-    while not window.shouldClose:
-        window.calculate_dt()
-        window.poll_events()
-        window.early_update()
-        window.update()
-        window.late_update()
-        window.draw()
+    while not game.should_close:
+        game.calculate_dt()
+        game.poll_events()
+        game.early_update()
+        game.update()
+        game.late_update()
+        game.draw()
