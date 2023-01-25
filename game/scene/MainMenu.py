@@ -1,5 +1,6 @@
 from util.Settings import Settings
 from util.Input import Input
+from util.Window import Window
 from util.Scenes import Scenes
 from util.Assets import Assets
 from game.scene.Scene import Scene
@@ -31,7 +32,7 @@ class MainMenu(Scene):
             Scenes.set_scene("LEVEL SELECT")
 
         if self.quit_button.update():
-            Scenes.should_quit = True
+            Window.quit()
 
     def get_surface(self):
         surf = p.Surface((Settings.get("RESOLUTION")))

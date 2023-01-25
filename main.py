@@ -1,5 +1,5 @@
-from gui.Window import Window
-
+from util.Window import Window
+import pygame as p
 from util.Time import Time
 from util.Settings import Settings
 

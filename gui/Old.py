@@ -15,7 +15,6 @@ from game.scene.Pause import Pause
 
 class Window:
     def __init__(self):
-        p.init()
         self.shouldClose = False
         self.display = None
         self.view = None
@@ -24,7 +23,7 @@ class Window:
         self.monitor_size = [p.display.Info().current_w, p.display.Info().current_h]
 
     def awake(self):
-        self.display = p.display.set_mode(Settings.get("RESOLUTION"))
+        self.display = p.display.set_mode(Settings.get("RESOLUTION"), p.RESIZABLE)
         p.display.set_caption(Settings.get("TITLE"))
         p.display.set_icon(Assets.get_image("assets/tiles/1.png"))
         self.resize(Settings.get("WINDOW SIZE"))
@@ -66,7 +65,7 @@ class Window:
 
     def draw(self):
 
-        self.view.blit(Scenes.get_surface(), (0, 0))
+        self.view.blit(p.transform.scale(Scenes.get_surface(), self.view.get_size()), (0, 0))
 
         self.display.blit(self.view, self.view_destination)
 

@@ -11,8 +11,6 @@ class Scenes:
     # Current scene
     current_scene = None
 
-    should_quit = False
-
     @staticmethod
     def add_scene(scene):
         Scenes.scenes[scene.name] = scene
