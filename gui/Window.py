@@ -9,7 +9,8 @@ from util.Assets import Assets
 
 from game.scene.MainMenu import MainMenu
 from game.scene.LevelSelect import LevelSelect
-from game.scene.Level1 import Level1
+from game.scene.Level import Level
+from game.scene.Pause import Pause
 
 
 class Window:
@@ -30,7 +31,8 @@ class Window:
 
         Scenes.add_scene(MainMenu())
         Scenes.add_scene(LevelSelect())
-        Scenes.add_scene(Level1())
+        Scenes.add_scene(Level())
+        Scenes.add_scene(Pause())
 
     def start(self):
         Scenes.set_scene("MAIN MENU")

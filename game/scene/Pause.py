@@ -9,9 +9,9 @@ from gui.element.Button import Button
 import pygame as p
 
 
-class MainMenu(Scene):
+class Pause(Scene):
     def __init__(self):
-        super().__init__("MAIN MENU")
+        super().__init__("PAUSE")
 
         self.shadow = None
 
@@ -22,22 +22,23 @@ class MainMenu(Scene):
                                   "assets/ui/button_1_active.png")
 
     def awake(self):
-        self.shadow = p.Surface((232, 224))
+        self.shadow = p.Surface((292, 284))
         self.shadow.fill((0, 0, 0))
-        self.shadow.set_alpha(120)
+        self.shadow.set_alpha(150)
 
     def update(self):
-        if self.play_button.update():
-            Scenes.set_scene("LEVEL SELECT")
+        if Input.get_key_down(p.K_ESCAPE) or self.play_button.update():
+            Scenes.set_scene("LEVEL")
 
         if self.quit_button.update():
-            Scenes.should_quit = True
+            Scenes.set_scene("LEVEL SELECT")
 
     def get_surface(self):
         surf = p.Surface((Settings.get("RESOLUTION")))
-        surf.blit(Assets.get_image("assets/backgrounds/default.png"), (0, 0))
 
-        surf.blit(self.shadow, (364, 160))
+        surf.blit(Scenes.get_surface("LEVEL"), (0, 0))
+
+        surf.blit(self.shadow, (334, 130))
 
         self.play_button.draw(surf)
         self.quit_button.draw(surf)

@@ -31,13 +31,13 @@ class LevelSelect(Scene):
             Scenes.set_scene("MAIN MENU")
 
         if self.button_1.update():
-            Scenes.set_scene("LEVEL 1")
+            Scenes.set_scene("LEVEL")
 
         if self.button_2.update():
-            Scenes.set_scene("LEVEL 1")
+            Scenes.set_scene("LEVEL")
 
         if self.button_3.update():
-            Scenes.set_scene("LEVEL 1")
+            Scenes.set_scene("LEVEL")
 
     def get_surface(self):
         surf = p.Surface((Settings.get("RESOLUTION")))
@@ -50,6 +50,8 @@ class LevelSelect(Scene):
         self.button_3.draw(surf)
 
         surf.blit(Assets.get_image("assets/ui/1.png", alpha=True), (132, 82))
+        surf.blit(Assets.get_image("assets/ui/2.png", alpha=True), (228, 82))
+        surf.blit(Assets.get_image("assets/ui/3.png", alpha=True), (324, 82))
 
         self.back_button.draw(surf)
         surf.blit(Assets.get_image("assets/ui/quit.png", alpha=True), (384, 412))
