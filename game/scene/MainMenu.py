@@ -3,6 +3,7 @@ from util.Input import Input
 from util.Window import Window
 from util.Scenes import Scenes
 from util.Assets import Assets
+from util.Sound import sounds
 from game.scene.Scene import Scene
 from game.scene.Level import Level
 from game.scene.LevelSelect import LevelSelect
