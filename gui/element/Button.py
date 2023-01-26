@@ -2,7 +2,7 @@ import pygame as p
 from gui.element.UIElement import UIElement
 from util.Input import Input
 from util.Assets import Assets
-
+from util.Sound import sounds
 
 class Button(UIElement):
     def __init__(self, rect, idle_surf, active_surf):
@@ -19,6 +19,7 @@ class Button(UIElement):
             self.current_surf = self.active
             if Input.get_button_down(0):
                 self.pressed = True
+                #sounds.soundEx("assets/sounds/click_x.wav")
         else:
             self.current_surf = self.idle
 
