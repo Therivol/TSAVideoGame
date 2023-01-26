@@ -1,4 +1,4 @@
-import Component
+from game.component.Component import Component
 
 
 class InstanceID(Component):
