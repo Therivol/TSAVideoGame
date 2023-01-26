@@ -21,3 +21,6 @@ class Scene:
 
     def get_surface(self):
         pass
+
+    def exit(self):
+        pass

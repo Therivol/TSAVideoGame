@@ -32,6 +32,7 @@ class LevelSelect(Scene):
 
         if self.button_1.update():
             Scenes.set_scene("LEVEL")
+            Scenes.get_scene("LEVEL").set_level('1')
 
         if self.button_2.update():
             Scenes.set_scene("LEVEL")
